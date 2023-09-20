@@ -8,6 +8,7 @@ use App\Http\Requests\StoreProduct;
 use App\Http\Requests\UpdateProduct;
 use Illuminate\Support\Str;
 use GuzzleHttp\Handler\Proxy;
+use App\Models\ProductCategory;
 
 class ProductController extends Controller
 {
@@ -21,8 +22,9 @@ class ProductController extends Controller
     public function create()
     {
         $products = Product::paginate();
+        $productCategory = ProductCategory::all();
 
-        return view('products.create', compact('products'));
+        return view('products.create', compact('products', 'productCategory'));
     }
 
     public function store(StoreProduct $request)
@@ -39,7 +41,8 @@ class ProductController extends Controller
         $product=Product::create([
             'name'=>$request->name,
             'description'=>$request->description,
-            'slug'=>Str::slug($request->name, '-')
+            'slug'=>Str::slug($request->name, '-'),
+            'category_id'=>$request->category_id
         ]);
 
         // $product = Product::create($request->all());
@@ -48,14 +51,17 @@ class ProductController extends Controller
         // return $product;
     }
 
-    public function show(Product $product)
+    public function show(Product $product, ProductCategory $productCategory)
     {
-        return view('products.show', compact('product'));
+        $productCategory = ProductCategory::find($product->category_id);
+        return view('products.show', compact('product', 'productCategory'));
     }
 
     public function edit(Product $product)
     {
-        return view('products.update', compact('product'));
+        $productCategory = ProductCategory::all();
+        
+        return view('products.update', compact('product', 'productCategory'));
     }
 
     public function update(UpdateProduct $request, Product $product)
@@ -64,6 +70,7 @@ class ProductController extends Controller
         $product->name = $request->name;
         $product->slug = Str::slug($request->name, '-');
         $product->description = $request->description;
+        $product->category_id = $request->category_id;
         $product->save();
         
         // $product->update($request->all());

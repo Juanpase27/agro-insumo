@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\CursoController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\ProductController;
+use App\Models\ProductCategories;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -53,3 +55,5 @@ Route::controller(ProductController::class)->group(function () {
 
 // Quedó así de largo debido a que en caso de requerir cambiar nombres o algún imprevisto, se deja especificado los parametros y nombres que maneja
 Route::resource('products', ProductController::class)->parameters(['products'=>'product'])->names('products');
+
+Route::resource('product_categories', ProductCategoryController::class);

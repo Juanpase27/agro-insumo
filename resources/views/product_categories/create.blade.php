@@ -3,11 +3,11 @@
 @section('title', 'Create')
 
 @section('content')
-    <h1>Crear Producto</h1>
-    <a href="{{route('products.index')}}">Volver</a>
-    <h4>Deseo crear un producto</h4>
+    <h1>Crear</h1>
+    <a href="{{route('product_categories.index')}}">Volver</a>
+    <h4>Deseo crear una categoria de producto</h4>
     {{-- {{route('product.createProduct')}} --}}
-    <form action="{{route('products.store')}}" method="post">
+    <form action="{{route('product_categories.store')}}" method="post">
         @csrf
         <label>
             Nombre:
@@ -28,15 +28,6 @@
             <small>*{{$message}}</small>
             <br>
         @enderror
-        <br>
-        <label>
-            Categoria del producto:
-            <select name="category_id">
-                @foreach ($productCategory as $item)
-                    <option value="{{ $item->id }}">{{ $item->name }}</option>
-                @endforeach
-            </select>
-        </label>
         <br>
         <button type="submit">Enviar</button>
     </form>

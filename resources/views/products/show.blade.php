@@ -3,14 +3,15 @@
 @section('title', 'Show ' . $product->name)
 
 @section('content')
-    <h1>Show</h1>
+    <h1>Mostrar Producto</h1>
     <a href="{{ route('products.index') }}">Volver</a>
     <a href="{{ route('products.edit', $product) }}">Actualizar</a>
     {{-- <a href="{{ route('products.destroy', $product) }}">Eliminar</a> --}}
     <br>
     <p>{{ $product }}</p>
     <p>Deseo visualizar el producto de id {{ $product->id }}, con nombre {{ $product->name }}; su descripción es:
-        {{ $product->description }}</p>
+        {{ $product->description }} y pertenece a la categoría de {{ $productCategory->name }}</p>
+    
     <form action="{{ route('products.destroy', $product) }}" method="POST">
         @csrf
         @method('delete')

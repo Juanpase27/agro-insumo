@@ -3,10 +3,10 @@
 @section('title', 'Delete')
 
 @section('content')
-    <h1>Eliminar Producto</h1>
-    <a href="{{ route('products.index') }}">Volver</a>
+    <h1>Eliminar</h1>
+    <a href="{{ route('product_categories.index') }}">Volver</a>
     <p>Deseo eliminar el producto {{ $product->name }}, el cual tiene un id {{ $product->id }}</p>
-    <form action="{{ route('products.destroy', $product) }}" method="POST">
+    <form action="{{ route('product_categories.destroy', $product) }}" method="POST">
         @csrf
         @method('delete')
         <button type="submit">Eliminar</button>
