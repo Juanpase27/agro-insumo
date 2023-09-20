@@ -4,7 +4,10 @@ use App\Http\Controllers\CursoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SupplyCategoryController;
+use App\Http\Controllers\SupplyController;
 use App\Models\ProductCategories;
+use App\Models\Supply;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -57,3 +60,7 @@ Route::controller(ProductController::class)->group(function () {
 Route::resource('products', ProductController::class)->parameters(['products'=>'product'])->names('products');
 
 Route::resource('product_categories', ProductCategoryController::class);
+
+Route::resource('supplies', SupplyController::class);
+
+Route::resource('supply_categories', SupplyCategoryController::class);

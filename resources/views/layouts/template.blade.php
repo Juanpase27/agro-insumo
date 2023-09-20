@@ -25,8 +25,11 @@
                     <li><a href="{{ route('home') }}" class="{{ request()->routeIS('home') ? 'active' : '' }}">Home</a></li>
                     --}}
                 <li><a href="{{route('home')}}" class="{{request()->routeIs('home') ? 'active' : '' }}">Home</a></li>
-                <li><a href="{{route('products.index')}}" class="{{request()->routeIs('products.*') ? 'active' : '' }}">Products</a></li>
-                <li><a href="{{route('product_categories.index')}}" class="{{request()->routeIs('product_categories.*') ? 'active' : '' }}">Product_categories</a></li>
+                <li><a href="{{route('products.index')}}" class="{{request()->routeIs('products.*') ? 'active' : '' }}">Gestión productos</a></li>
+                <li><a href="{{route('product_categories.index')}}" class="{{request()->routeIs('product_categories.*') ? 'active' : '' }}">Gestión categorías de productos</a></li>
+                <li><a href="{{route('supplies.index')}}" class="{{request()->routeIs('supplies.*') ? 'active' : '' }}">Gestión insumos</a></li>
+                <li><a href="{{route('supply_categories.index')}}" class="{{request()->routeIs('supply_categories.*') ? 'active' : '' }}">Gestión categorías de insumos</a></li>
+                
             </ul>
         </nav>
     </header>
