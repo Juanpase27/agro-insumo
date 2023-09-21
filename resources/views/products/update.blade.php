@@ -67,7 +67,7 @@
                         </div>
                     @endif
                 </div>
-            
+
                 <script>
                     // Función para ocultar el mensaje después de 5 segundos
                     function ocultarMensaje() {
@@ -76,7 +76,7 @@
                             successMessage.style.display = 'none';
                         }
                     }
-            
+
                     // Configurar el temporizador para ocultar el mensaje después de 5 segundos
                     setTimeout(ocultarMensaje, 2300); // 5000 milisegundos = 5 segundos
                 </script>
