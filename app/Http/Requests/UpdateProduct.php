@@ -23,7 +23,7 @@ class UpdateProduct extends FormRequest
     {
         return [
             'name'=>'required|min:2',
-            'description'=>'required|min:4'
+            'description'=>'required|min:2'
         ];
     }
 }

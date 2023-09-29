@@ -5,13 +5,13 @@
 @section('content')
     <script>
         function redirectToCreatePage() {
-            var createRoute = "{{ route('products.create') }}";
+            var createRoute = "{{ route('supply_categories.create') }}";
             window.location.href = createRoute;
         }
     </script>
-    <h1>Productos disponibles</h1>
-    <p>Aca encontraras todos los productos que haz creado.</p>
-    <button type="button" class="btn btn-primary" onclick="redirectToCreatePage()">Agregar producto</button>
+    <h1>Categorias de insumos disponibles</h1>
+    <p>Aca encontraras todas las categorias de insumos que haz creado.</p>
+    <button type="button" class="btn btn-primary" onclick="redirectToCreatePage()">Crear categoría de insumo</button>
     <div class="mx-auto w-75">
         @if (session('success'))
             <div class="alert alert-success" id="successMessage">
@@ -32,11 +32,13 @@
         // Configurar el temporizador para ocultar el mensaje después de 5 segundos
         setTimeout(ocultarMensaje, 2300); // 5000 milisegundos = 5 segundos
     </script>
-
-
+    {{-- 
+    <a href="{{route('product.update')}}/25">Actualizar producto</a>
+    <a href="{{route('product.delete')}}/25">Crear producto</a> 
+    --}}
     <div class="container mt-5 mb-3">
         <div class="row">
-            @foreach ($products as $item)
+            @foreach ($supplyCategory as $item)
                 <div class="col-md-4">
                     <div class="card p-3 mb-2">
                         <div class="d-flex justify-content-between">
@@ -49,8 +51,7 @@
                         </div>
                         <div class="mt-5">
                             <h4 class="heading">{{ $item->name }}</h4>
-                            <div class="mt-3"> <span class="text1">{{ $item->description }}</span> </div>
-                            <div class="mt-3"> <a href="{{ route('products.show', $item) }}"
+                            <div class="mt-3"> <a href="{{ route('supply_categories.show', $item) }}"
                                     style="color: #959595;  text-decoration: underline;">Conocer mas</a> </div>
                         </div>
                     </div>
@@ -58,11 +59,6 @@
             @endforeach
         </div>
         <div class="card-body">
-            {{ $products->links() }}
+            {{ $supplyCategory->links() }}
         </div>
-    </div>
-
-
-
-
-@endsection
+    @endsection

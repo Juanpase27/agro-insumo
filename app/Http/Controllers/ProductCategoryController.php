@@ -14,7 +14,7 @@ class ProductCategoryController extends Controller
 {
     public function index()
     {
-        $productCategory = ProductCategory::orderBy('id', 'desc')->paginate();
+        $productCategory = ProductCategory::orderBy('id', 'desc')->paginate(15);
 
         return view('product_categories.index', compact('productCategory'));
     }
@@ -45,7 +45,7 @@ class ProductCategoryController extends Controller
 
         // $product = Product::create($request->all());
 
-        return redirect()->route('product_categories.index');
+        return redirect()->route('product_categories.index')->with('success', 'El registro de la categoría del producto ' . $request->name . ' fue exitoso.');
         // return $product;
     }
 
@@ -69,7 +69,7 @@ class ProductCategoryController extends Controller
         
         // $product->update($request->all());
 
-        return redirect()->route('product_categories.index');
+        return redirect()->route('product_categories.index')->with('success', 'La actualización de la categoría del producto ' . $request->name . ' fue exitosa.');
     }
 
     /*
@@ -83,6 +83,6 @@ class ProductCategoryController extends Controller
     {
         $productCategory->delete();
 
-        return redirect()->route('product_categories.index');
+        return redirect()->route('product_categories.index')->with('success', 'La eliminación de la categoría del producto ' . $productCategory->name . ' fue exitosa.');
     }
 }

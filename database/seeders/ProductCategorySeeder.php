@@ -13,6 +13,13 @@ class ProductCategorySeeder extends Seeder
      */
     public function run(): void
     {
+
+        $productCategory0=new ProductCategory();
+        $productCategory0->name="Sin especificar";
+        $productCategory0->description="No se tiene alguna clasificación especifica para el producto en cuestión.";
+        $productCategory0->slug="sin-especificar";
+        $productCategory0->save();
+
         $productCategory1=new ProductCategory();
         $productCategory1->name="Cereales";
         $productCategory1->description="Cultivos pertenecientes a la familia Poaceae o Gramíneas que normalmente se explotan en grandes extensiones y cuyos granos se caracterizan por su alto contenido en carbohidratos. Generalmente ese tipo de cultivo tiene un uso agroindustrial. Ejemplos: maíz, arroz o sorgo.";
@@ -73,11 +80,7 @@ class ProductCategorySeeder extends Seeder
         $productCategory10->slug="pastos";
         $productCategory10->save();
 
-        $productCategory11=new ProductCategory();
-        $productCategory11->name="Sin especificar";
-        $productCategory11->description="No se tiene alguna clasificación especifica para el producto en cuestión.";
-        $productCategory11->slug="sin-especificar";
-        $productCategory11->save();
+        
 
 
         // Sirve para que se generen aleatoriamente x cantidad de registros indicados.

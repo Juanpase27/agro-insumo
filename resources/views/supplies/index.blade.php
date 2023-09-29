@@ -5,17 +5,18 @@
 @section('content')
     <script>
         function redirectToCreatePage() {
-            var createRoute = "{{ route('products.create') }}";
+            var createRoute = "{{ route('supplies.create') }}";
             window.location.href = createRoute;
         }
     </script>
-    <h1>Productos disponibles</h1>
-    <p>Aca encontraras todos los productos que haz creado.</p>
-    <button type="button" class="btn btn-primary" onclick="redirectToCreatePage()">Agregar producto</button>
+    <h1>Insumos disponibles</h1>
+    <p>Aca encontraras todos los insumos que haz creado.</p>
+    <button type="button" class="btn btn-primary" onclick="redirectToCreatePage()">Agregar insumo</button>
     <div class="mx-auto w-75">
         @if (session('success'))
             <div class="alert alert-success" id="successMessage">
                 {{ session('success') }}
+
             </div>
         @endif
     </div>
@@ -32,11 +33,9 @@
         // Configurar el temporizador para ocultar el mensaje después de 5 segundos
         setTimeout(ocultarMensaje, 2300); // 5000 milisegundos = 5 segundos
     </script>
-
-
     <div class="container mt-5 mb-3">
         <div class="row">
-            @foreach ($products as $item)
+            @foreach ($supply as $item)
                 <div class="col-md-4">
                     <div class="card p-3 mb-2">
                         <div class="d-flex justify-content-between">
@@ -49,8 +48,7 @@
                         </div>
                         <div class="mt-5">
                             <h4 class="heading">{{ $item->name }}</h4>
-                            <div class="mt-3"> <span class="text1">{{ $item->description }}</span> </div>
-                            <div class="mt-3"> <a href="{{ route('products.show', $item) }}"
+                            <div class="mt-3"> <a href="{{ route('supplies.show', $item) }}"
                                     style="color: #959595;  text-decoration: underline;">Conocer mas</a> </div>
                         </div>
                     </div>
@@ -58,11 +56,7 @@
             @endforeach
         </div>
         <div class="card-body">
-            {{ $products->links() }}
+            {{ $supply->links() }}
         </div>
     </div>
-
-
-
-
 @endsection

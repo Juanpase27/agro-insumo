@@ -14,7 +14,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::orderBy('id', 'desc')->paginate();
+        $products = Product::orderBy('id', 'desc')->paginate(15);
 
         return view('products.index', compact('products'));
     }
@@ -37,17 +37,17 @@ class ProductController extends Controller
         $product->save();
          */
 
-        
-        $product=Product::create([
-            'name'=>$request->name,
-            'description'=>$request->description,
-            'slug'=>Str::slug($request->name, '-'),
-            'category_id'=>$request->category_id
+
+        $product = Product::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'slug' => Str::slug($request->name, '-'),
+            'category_id' => $request->category_id
         ]);
 
         // $product = Product::create($request->all());
 
-        return redirect()->route('products.index');
+        return redirect()->route('products.index')->with('success', 'El registro del producto ' . $request->name . ' fue exitoso.');
         // return $product;
     }
 
@@ -60,7 +60,7 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $productCategory = ProductCategory::all();
-        
+
         return view('products.update', compact('product', 'productCategory'));
     }
 
@@ -72,10 +72,10 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->category_id = $request->category_id;
         $product->save();
-        
+
         // $product->update($request->all());
 
-        return redirect()->route('products.index');
+        return redirect()->route('products.index')->with('success', 'La actualización del producto ' . $request->name . ' fue exitosa.');
     }
 
     /*
@@ -89,6 +89,6 @@ class ProductController extends Controller
     {
         $product->delete();
 
-        return redirect()->route('products.index');
+        return redirect()->route('products.index')->with('success', 'La eliminación del producto ' . $product->name . ' fue exitosa.');
     }
 }
