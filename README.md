@@ -11,12 +11,16 @@ Consideraciones:
 
 Antes de ejectuar:
 - Abrir con la terminal y ubicarse en la carpeta del proyecto.
-- Ejecutar el comando: 
+- Ejecutar el comando:
+    ***composer require laravel/ui***
+    ***php artisan ui bootstrap***
+    ***npm install***
     ***php artisan migrate:fresh --seed***
   esto con el fin de generar datos de prueba y evitar realizar los mismos de forma manual.(En esta versión existe un fallo en los seeders, así que si llega a fallar el comando, ejecutar hasta que funcione el mismo)
 - Ejecutar el comando:
     ***php artisan serve***
   esto con el fin de ejecutar el proyecto como servicio; esto es más útil con servicios como Jetstream que al día 29 de Septiembre de 2023 no está incorporado en esta versión, así que el ejecutarlo o no es irrelevante hasta la fecha.
+  ***npm run dev***
 ## Laravel
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
