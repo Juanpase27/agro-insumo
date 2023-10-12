@@ -2,12 +2,11 @@
 
 namespace Database\Factories;
 
-use App\Models\ProductCategory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ProductCategory>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
 class ProductCategoryFactory extends Factory
 {
@@ -16,15 +15,13 @@ class ProductCategoryFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    protected $model = ProductCategory::class;
     public function definition(): array
     {
-
-        $name = $this->faker->sentence();
+        $name = $this->faker->word(20);
         return [
             'name' => $name,
             'slug' => Str::slug($name, '-'),
-            'description' => $this->faker->paragraph()
+            'description' => $this->faker->text(200)
         ];
     }
 }
