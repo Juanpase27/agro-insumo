@@ -20,6 +20,8 @@ Antes de ejectuar:
     ***php artisan migrate:fresh --seed***
   esto con el fin de generar datos de prueba y evitar realizar los mismos de forma manual.(En esta versión existe un fallo en los seeders, así que si llega a fallar el comando, ejecutar hasta que funcione el mismo)
 - Ejecutar el comando:
+    ***npm run dev***
+  Y en una consola aparte:
     ***php artisan serve***
   esto con el fin de ejecutar el proyecto como servicio; esto es más útil con servicios como Jetstream que al día 29 de Septiembre de 2023 no está incorporado en esta versión, así que el ejecutarlo o no es irrelevante hasta la fecha.
   ***npm run dev***
