@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Supplies;
+use App\Models\Supply;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,6 +13,6 @@ class SupplySeeder extends Seeder
      */
     public function run(): void
     {
-        Supplies::factory(25)->create();
+        Supply::factory(25)->create();
     }
 }

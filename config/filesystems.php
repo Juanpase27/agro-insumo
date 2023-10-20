@@ -32,12 +32,12 @@ return [
 
         'local' => [
             'driver' => 'local',
-            'root' => storage_path('app/public'), //Se hizo de esta forma debido a que en la línea 16 no está aceptando el que se le pase como parametro public. El cambiar la misma no afecta en nada actualmente
+            'root' => storage_path('app'),
             'throw' => false,
         ],
 
         'public' => [
-            'driver' => 'public',
+            'driver' => 'local',
             'root' => storage_path('app/public'),
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',

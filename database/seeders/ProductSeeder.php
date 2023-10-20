@@ -2,10 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\Products;
+use App\Models\Product;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
 
 class ProductSeeder extends Seeder
 {
@@ -14,23 +13,14 @@ class ProductSeeder extends Seeder
      */
     public function run(): void
     {
-        /*
-        $product=new Products();
+        $product=new Product();
 
         $product->name="Papa";
         $product->description="Papa criolla";
         $product->slug="Papa criolla";
         $product->category_id=2;
         $product->save();
-        */
         
-        //Products::factory(25)->create();
-        $products = Products::factory(20)->create();
-        foreach ($products as $product) {
-            $product->product_supply()->attach([
-                rand(1,4),
-                rand(5,8),
-            ]);
-        }
+        Product::factory(25)->create();
     }
 }
