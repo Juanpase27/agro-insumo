@@ -14,13 +14,13 @@
     <button type="button" class="btn btn-primary" onclick="redirectToCreatePage()">Crear categoria</button>
     <div class="mx-auto w-75">
         @if (session('success'))
-        <div class="alert alert-success" id="successMessage">
-            {{ session('success') }}
-            
-        </div>
-    @endif
+            <div class="alert alert-success" id="successMessage">
+                {{ session('success') }}
+
+            </div>
+        @endif
     </div>
-    
+
     <script>
         // Función para ocultar el mensaje después de 5 segundos
         function ocultarMensaje() {
@@ -29,7 +29,7 @@
                 successMessage.style.display = 'none';
             }
         }
-    
+
         // Configurar el temporizador para ocultar el mensaje después de 5 segundos
         setTimeout(ocultarMensaje, 2300); // 5000 milisegundos = 5 segundos
     </script>

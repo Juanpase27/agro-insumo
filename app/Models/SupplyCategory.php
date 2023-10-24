@@ -10,6 +10,5 @@ class SupplyCategory extends Model
     use HasFactory;
     
     protected $table = "supply_categories";
-
     protected $guarded = [];
 }
