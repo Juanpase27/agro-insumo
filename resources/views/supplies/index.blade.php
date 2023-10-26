@@ -9,7 +9,7 @@
             window.location.href = createRoute;
         }
     </script>
-    <h1>Insumos disponibles</h1>
+    <h1 class="font-color-titles">Insumos disponibles</h1>
     <p>Aca encontraras todos los insumos que haz creado.</p>
     <button type="button" class="btn btn-primary" onclick="redirectToCreatePage()">Agregar insumo</button>
     <div class="mx-auto w-75">
@@ -37,7 +37,7 @@
         <div class="row">
             @foreach ($supply as $item)
                 <div class="col-md-4">
-                    <div class="card p-3 mb-2">
+                    <div class="card p-3 mb-2"  style="border-color: #2c1b19">
                         <div class="d-flex justify-content-between">
                             <div class="d-flex flex-row align-items-center">
                                 <div class="icon"> <i class="bx bxl-mailchimp"></i> </div>
@@ -47,9 +47,9 @@
                             </div>
                         </div>
                         <div class="mt-5">
-                            <h4 class="heading">{{ $item->name }}</h4>
+                            <h4 class="heading" style="color:#317533; font-weight: bold;">{{ $item->name }}</h4>
                             <div class="mt-3"> <a href="{{ route('supplies.show', $item) }}"
-                                    style="color: #959595;  text-decoration: underline;">Conocer mas</a> </div>
+                                    style="color: #317533;  text-decoration: underline;">Conocer mas</a> </div>
                         </div>
                     </div>
                 </div>

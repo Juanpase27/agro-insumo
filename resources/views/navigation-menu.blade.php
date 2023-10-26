@@ -10,7 +10,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
+        {{-- <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <!-- Navigation Links -->
                 <li class="nav-item">
@@ -23,7 +23,7 @@
             <!-- Teams Dropdown -->
             @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                 <div class="navbar-nav ml-auto">
-                    
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="teamsDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -55,7 +55,7 @@
                 </div>
             @endif
 
-            <!-- Settings Dropdown -->
+            {{-- <!-- Settings Dropdown -->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="settingsDropdown" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -90,6 +90,6 @@
                     </form>
                 </ul>
             </li>
-        </div>
+        </div> --}}
     </div>
 </nav>

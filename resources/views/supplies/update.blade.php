@@ -31,7 +31,7 @@
                                         name="name" value="{{ old('name', $supply->name) }}">
                                 </div>
                                 @error('name')
-                                    <small>*{{ $message }}</small>
+                                    <small class="error">*{{ $message }}</small>
                                 @enderror
                             </div>
                         </div>
@@ -47,7 +47,7 @@
                                         name="description" value="{{ old('description', $supply->description) }}">
                                 </div>
                                 @error('description')
-                                    <small>*{{ $message }}</small>
+                                    <small class="error">*{{ $message }}</small>
                                 @enderror
                             </div>
 

@@ -11,7 +11,7 @@
             <h1>Actualizacion del isumo</h1>
         </div>
     </div>
-    <p>Acontinuacion debes ingresar los campos a los cuales deseas actualizar de este insumo</p>
+    <p>A continuacion debes ingresar los campos a los cuales deseas actualizar de este insumo</p>
 
     <form action="{{route('supply_categories.update', $supplyCategory)}}" method="post">
         <div class="container mb-5 d-flex justify-content-center">
@@ -47,6 +47,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary" >Actualizar</button>
                 <div class="mx-auto w-75">
+
                     @if (session('success'))
                         <div class="alert alert-success" id="successMessage">
                             {{ session('success') }}
