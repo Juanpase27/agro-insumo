@@ -2,10 +2,10 @@
 
 namespace Database\Factories;
 
-use App\Models\Supply;
 use App\Models\SupplyCategory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\SupplyCategory>
  */

@@ -24,9 +24,9 @@
                                 <p style="text-align: initial">Nombre:<p>
                                 <div class="input-group">
                                 @csrf
-                                    <input class="form-control" type="text" placeholder="Escribe tu nombre"  name="name"  value="{{ old('name', $product->name) }}"> </div>
+                                    <input class="form-control @error('name') is-invalid @enderror"  type="text" placeholder="Escribe tu nombre"  name="name"  value="{{ old('name', $product->name) }}"> </div>
                                 @error('name')
-                                    <small>*{{$message}}</small>
+                                    <small class="error">*{{$message}}</small>
                                 @enderror
                             </div>
                         </div>
@@ -37,9 +37,9 @@
                                 <p style="text-align: initial">Descripción:<p>
                                 <div class="input-group">
                                 @csrf
-                                    <input class="form-control" type="text" placeholder="Descripción..."  name="description" value="{{ old('description', $product->description) }}"> </div>
+                                    <input class="form-control @error('description') is-invalid @enderror"  type="text" placeholder="Descripción..."  name="description" value="{{ old('description', $product->description) }}"> </div>
                                 @error('description')
-                                    <small>*{{$message}}</small>
+                                    <small class="error">*{{$message}}</small>
                                 @enderror
                             </div>
                         </div>
@@ -67,7 +67,7 @@
                         </div>
                     @endif
                 </div>
-            
+
                 <script>
                     // Función para ocultar el mensaje después de 5 segundos
                     function ocultarMensaje() {
@@ -76,7 +76,7 @@
                             successMessage.style.display = 'none';
                         }
                     }
-            
+
                     // Configurar el temporizador para ocultar el mensaje después de 5 segundos
                     setTimeout(ocultarMensaje, 2300); // 5000 milisegundos = 5 segundos
                 </script>

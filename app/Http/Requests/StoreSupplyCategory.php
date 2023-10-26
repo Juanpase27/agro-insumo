@@ -22,8 +22,8 @@ class StoreSupplyCategory extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>'required|min:2',
-            'description'=>'required|min:2'
+            'name' => 'required|min:2',
+            'description' => 'required|min:2'
         ];
     }
 }

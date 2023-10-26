@@ -14,9 +14,11 @@ Antes de ejectuar:
 - Abrir con la terminal y ubicarse en la carpeta del proyecto.
 - Ejecutar el comando:
     ***composer require laravel/ui***
+  
     ***php artisan ui bootstrap***
   
     ***npm install***
+  
     ***php artisan migrate:fresh --seed***
   esto con el fin de generar datos de prueba y evitar realizar los mismos de forma manual.(En esta versión existe un fallo en los seeders, así que si llega a fallar el comando, ejecutar hasta que funcione el mismo)
 - Ejecutar el comando:
