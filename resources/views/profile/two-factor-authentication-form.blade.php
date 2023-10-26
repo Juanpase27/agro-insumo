@@ -1,4 +1,4 @@
-{{--<x-action-section>
+{{-- <x-action-section>
     <x-slot name="title">
         {{ __('Two Factor Authentication') }}
     </x-slot>
@@ -121,24 +121,29 @@
             @endif
         </div>
     </x-slot>
-</x-action-section>--}}
+</x-action-section> --}}
 <div class="container">
-    <div class="alert alert-primary">
-        <h3 class="alert-heading">
-            @if ($this->enabled)
-                @if ($showingConfirmation)
-                    {{ __('Finish enabling two factor authentication.') }}
+    <div class="row">
+        <div class="col-lg-6 col-md-12">
+            <h4 class="font-color-titles" style="text-align: -webkit-auto">
+                @if ($this->enabled)
+                    @if ($showingConfirmation)
+                        {{ __('Finish enabling two factor authentication.') }}
+                    @else
+                        {{ __('You have enabled two factor authentication.') }}
+                    @endif
                 @else
-                    {{ __('You have enabled two factor authentication.') }}
+                    {{ __('You have not enabled two factor authentication.') }}
                 @endif
-            @else
-                {{ __('You have not enabled two factor authentication.') }}
-            @endif
-        </h3>
-        <p class="mt-3">
-            {{ __('Add additional security to your account using two factor authentication.') }}
-        </p>
+            </h4>
+        </div>
+        <div class="col-lg-6 col-md-12">
+            <hr style="border-color: white, margin-top: 32px; " class="font-color-titles" />
+        </div>
     </div>
+    <p class="mt-3" style="text-align: initial;">
+        {{ __('Add additional security to your account using two factor authentication.') }}
+    </p>
 
     @if ($this->enabled)
         @if ($showingQrCode)
@@ -161,7 +166,9 @@
                 @if ($showingConfirmation)
                     <div class="mt-4">
                         <label for="code" class="form-label">{{ __('Code') }}</label>
-                        <input id="code" type="text" name="code" class="form-control" inputmode="numeric" autofocus autocomplete="one-time-code" wire:model="code" wire:keydown.enter="confirmTwoFactorAuthentication" />
+                        <input id="code" type="text" name="code" class="form-control" inputmode="numeric"
+                            autofocus autocomplete="one-time-code" wire:model="code"
+                            wire:keydown.enter="confirmTwoFactorAuthentication" />
                         <x-input-error for="code" class="mt-2" />
                     </div>
                 @endif
@@ -182,7 +189,7 @@
         @endif
     @endif
 
-    <div class="mt-5">
+    <div class="mt-5 mb-4">
         @if (!$this->enabled)
             <x-confirms-password wire:then="enableTwoFactorAuthentication">
                 <button type="button" class="btn btn-primary" wire:loading.attr="disabled">
@@ -226,4 +233,3 @@
         @endif
     </div>
 </div>
-

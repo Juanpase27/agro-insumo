@@ -22,9 +22,9 @@
                                 <p style="text-align: initial">Nombre:<p>
                                 <div class="input-group">
                                 @csrf
-                                    <input class="form-control" type="text" placeholder="Escribe tu nombre"  name="name" value="{{old('name')}}"> </div>
+                                    <input class="form-control @error('name') is-invalid @enderror"  type="text" placeholder="Escribe tu nombre"  name="name" value="{{old('name')}}"> </div>
                                 @error('name')
-                                    <small>*{{$message}}</small>
+                                    <small class="error">*{{$message}}</small>
                                 @enderror
                             </div>
                         </div>
@@ -35,9 +35,9 @@
                                 <p style="text-align: initial">Descripción:<p>
                                 <div class="input-group">
                                 @csrf
-                                    <input class="form-control" type="text" placeholder="Descripción..."  name="description" value="{{old('description')}}"> </div>
+                                    <input class="form-control @error('description') is-invalid @enderror"  type="text" placeholder="Descripción..."  name="description" value="{{old('description')}}"> </div>
                                 @error('description')
-                                    <small>*{{$message}}</small>
+                                    <small  class="error">*{{$message}}</small>
                                 @enderror
                             </div>
                         </div>

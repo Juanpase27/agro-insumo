@@ -19,7 +19,7 @@
             <h1>Informacion del producto</h1>
         </div>
     </div>
-    <p>Acontinuacion podras encontraras toda la informacion suminstrada por el producto seleccionado:</p>
+    <p>A continuacion podras encontraras toda la informacion suminstrada por el producto seleccionado:</p>
     <div class="col-md-12 mt-4">
         <div class="card p-3 mb-2" style="margin: 0 18%">
             <div class="d-flex justify-content-between">
@@ -48,12 +48,19 @@
                         <button type="button" class="btn btn-danger" onclick="confirmDelete()">Eliminar</button>
                         <script>
                             function confirmDelete() {
-                                if (confirm("¿Estás seguro de que deseas eliminar este elemento?")) {
-                                    // Si el usuario confirma, envía el formulario para eliminar el elemento
-                                    document.forms[0].submit();
-                                } else {
-                                    // Si el usuario cancela, no se hace nada
-                                }
+                                Swal.fire({
+                                    title: "¿Estás seguro?",
+                                    text:"Se eliminara la informacion del elemento seleccionado, no podrás revertir.",
+                                    icon: 'warning',
+                                    showCancelButton: true,
+                                    confirmButtonColor: '#61a851',
+                                    cancelButtonColor: '#d33',
+                                    confirmButtonText: 'Si, deseo eliminarlo'
+                                    }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        document.forms[0].submit();
+                                    }
+                                })
                             }
                         </script>
                     </form>

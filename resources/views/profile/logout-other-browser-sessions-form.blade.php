@@ -98,21 +98,26 @@
     </x-slot>
 </x-action-section> --}}
 <div class="container">
-    <h2 class="h2">
-        {{ __('Browser Sessions') }}
-    </h2>
+    <div class="row">
+        <div class="col-lg-3 col-md-12">
+            <h4 class="font-color-titles" style="text-align: -webkit-auto">{{ __('Browser Sessions') }}</h4>
+        </div>
+        <div class="col-lg-9 col-md-12">
+            <hr style="border-color: white; background: #61a851; height: 4%;" />
+        </div>
+    </div>
 
-    <p class="text-muted">
+    <p class="text-muted" style="text-align: initial;">
         {{ __('Manage and log out your active sessions on other browsers and devices.') }}
     </p>
 
-    <div class="max-w-xl text-sm text-gray-600">
+    <div class="max-w-xl text-sm text-gray-600" style="text-align: initial;">
         {{ __('If necessary, you may log out of all of your other browser sessions across all of your devices. Some of your recent sessions are listed below; however, this list may not be exhaustive. If you feel your account has been compromised, you should also update your password.') }}
     </div>
 
     @if (count($this->sessions) > 0)
-        <div class="mt-5">
-            <div class="list-group">
+        <div class="mt-5" style="text-align: -webkit-center">
+            <div class="list-group w-50">
                 <!-- Other Browser Sessions -->
                 @foreach ($this->sessions as $session)
                     <div class="list-group-item">
@@ -158,20 +163,22 @@
         </div>
     @endif
 
-    <div class="mt-5 d-flex align-items-center">
-        <button class="btn btn-primary" wire:click="confirmLogout" wire:loading.attr="disabled">
-            {{ __('Log Out Other Browser Sessions') }}
-        </button>
+    <div >
+        <div class="mt-5 d-flex align-items-center" style="justify-content: center;">
 
-        <div class="ml-3">
-            <span class="text-success" wire:loading wire:target="confirmLogout">{{ __('Logging out...') }}</span>
+                <button type="button" class="btn btn-primary mb-3" wire:click="confirmLogout" wire:loading.attr="disabled">
+                    {{ __('Log Out Other Browser Sessions') }}
+                </button>
+
+            <div class="ml-3">
+                <span class="text-success" wire:loading wire:target="confirmLogout">{{ __('Logging out...') }}</span>
+            </div>
+
+            <x-action-message class="ml-3" on="loggedOut">
+                {{ __('Done.') }}
+            </x-action-message>
         </div>
-
-        <x-action-message class="ml-3" on="loggedOut">
-            {{ __('Done.') }}
-        </x-action-message>
     </div>
-
     <!-- Log Out Other Devices Confirmation Modal -->
     <div class="modal" tabindex="-1" role="dialog" wire:ignore.self>
         <div class="modal-dialog" role="document">
