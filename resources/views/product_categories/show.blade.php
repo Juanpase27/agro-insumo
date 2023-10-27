@@ -57,6 +57,7 @@
                                     }).then((result) => {
                                     if (result.isConfirmed) {
                                         document.forms[0].submit();
+                                        window.location.href = "{{ route('product_categories.index') }}";
                                     }
                                 })
                             }
