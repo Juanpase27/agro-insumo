@@ -18,5 +18,6 @@ class ContactController extends Controller
         Mail::to('soporte@prueba.com')->send(new ContactMailable($request->all()));
         //return $request->all();
         return 'Mensaje enviado';
+        //redirect('products.index');
     }
 }

@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit4c631b9c39b53372eab84dbddb1f529e
+class ComposerStaticInit3e8107ce8cbcc3cd97df1490f31cfaca
 {
     public static $files = array (
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
@@ -381,8 +381,8 @@ class ComposerStaticInit4c631b9c39b53372eab84dbddb1f529e
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -642,7 +642,13 @@ class ComposerStaticInit4c631b9c39b53372eab84dbddb1f529e
         'App\\Actions\\Jetstream\\DeleteUser' => __DIR__ . '/../..' . '/app/Actions/Jetstream/DeleteUser.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\ContactController' => __DIR__ . '/../..' . '/app/Http/Controllers/ContactController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\PostController' => __DIR__ . '/../..' . '/app/Http/Controllers/PostController.php',
+        'App\\Http\\Controllers\\ProductCategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProductCategoryController.php',
+        'App\\Http\\Controllers\\ProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProductController.php',
+        'App\\Http\\Controllers\\SupplyCategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/SupplyCategoryController.php',
+        'App\\Http\\Controllers\\SupplyController' => __DIR__ . '/../..' . '/app/Http/Controllers/SupplyController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -653,6 +659,18 @@ class ComposerStaticInit4c631b9c39b53372eab84dbddb1f529e
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Requests\\StoreProduct' => __DIR__ . '/../..' . '/app/Http/Requests/StoreProduct.php',
+        'App\\Http\\Requests\\StoreProductCategory' => __DIR__ . '/../..' . '/app/Http/Requests/StoreProductCategory.php',
+        'App\\Http\\Requests\\StoreSupply' => __DIR__ . '/../..' . '/app/Http/Requests/StoreSupply.php',
+        'App\\Http\\Requests\\StoreSupplyCategory' => __DIR__ . '/../..' . '/app/Http/Requests/StoreSupplyCategory.php',
+        'App\\Http\\Requests\\UpdateProduct' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateProduct.php',
+        'App\\Mail\\ContactMailable' => __DIR__ . '/../..' . '/app/Mail/ContactMailable.php',
+        'App\\Models\\Image' => __DIR__ . '/../..' . '/app/Models/Image.php',
+        'App\\Models\\Post' => __DIR__ . '/../..' . '/app/Models/Post.php',
+        'App\\Models\\Product' => __DIR__ . '/../..' . '/app/Models/Product.php',
+        'App\\Models\\ProductCategory' => __DIR__ . '/../..' . '/app/Models/ProductCategory.php',
+        'App\\Models\\Supply' => __DIR__ . '/../..' . '/app/Models/Supply.php',
+        'App\\Models\\SupplyCategory' => __DIR__ . '/../..' . '/app/Models/SupplyCategory.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -868,8 +886,20 @@ class ComposerStaticInit4c631b9c39b53372eab84dbddb1f529e
         'DASPRiD\\Enum\\Exception\\SerializeNotSupportedException' => __DIR__ . '/..' . '/dasprid/enum/src/Exception/SerializeNotSupportedException.php',
         'DASPRiD\\Enum\\Exception\\UnserializeNotSupportedException' => __DIR__ . '/..' . '/dasprid/enum/src/Exception/UnserializeNotSupportedException.php',
         'DASPRiD\\Enum\\NullValue' => __DIR__ . '/..' . '/dasprid/enum/src/NullValue.php',
+        'Database\\Factories\\ImageFactory' => __DIR__ . '/../..' . '/database/factories/ImageFactory.php',
+        'Database\\Factories\\PostFactory' => __DIR__ . '/../..' . '/database/factories/PostFactory.php',
+        'Database\\Factories\\ProductCategoryFactory' => __DIR__ . '/../..' . '/database/factories/ProductCategoryFactory.php',
+        'Database\\Factories\\ProductFactory' => __DIR__ . '/../..' . '/database/factories/ProductFactory.php',
+        'Database\\Factories\\SupplyCategoryFactory' => __DIR__ . '/../..' . '/database/factories/SupplyCategoryFactory.php',
+        'Database\\Factories\\SupplyFactory' => __DIR__ . '/../..' . '/database/factories/SupplyFactory.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
+        'Database\\Seeders\\PostSeeder' => __DIR__ . '/../..' . '/database/seeders/PostSeeder.php',
+        'Database\\Seeders\\ProductCategorySeeder' => __DIR__ . '/../..' . '/database/seeders/ProductCategorySeeder.php',
+        'Database\\Seeders\\ProductSeeder' => __DIR__ . '/../..' . '/database/seeders/ProductSeeder.php',
+        'Database\\Seeders\\SupplyCategorySeeder' => __DIR__ . '/../..' . '/database/seeders/SupplyCategorySeeder.php',
+        'Database\\Seeders\\SupplySeeder' => __DIR__ . '/../..' . '/database/seeders/SupplySeeder.php',
+        'Database\\Seeders\\UserSeeder' => __DIR__ . '/../..' . '/database/seeders/UserSeeder.php',
         'DateError' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateError.php',
         'DateException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateException.php',
         'DateInvalidOperationException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateInvalidOperationException.php',
@@ -7298,10 +7328,10 @@ class ComposerStaticInit4c631b9c39b53372eab84dbddb1f529e
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit4c631b9c39b53372eab84dbddb1f529e::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit4c631b9c39b53372eab84dbddb1f529e::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit4c631b9c39b53372eab84dbddb1f529e::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit4c631b9c39b53372eab84dbddb1f529e::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit3e8107ce8cbcc3cd97df1490f31cfaca::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit3e8107ce8cbcc3cd97df1490f31cfaca::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit3e8107ce8cbcc3cd97df1490f31cfaca::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit3e8107ce8cbcc3cd97df1490f31cfaca::$classMap;
 
         }, null, ClassLoader::class);
     }
